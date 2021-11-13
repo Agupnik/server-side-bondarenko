@@ -41,6 +41,20 @@ namespace Kpi.ServerSide.AutomationFramework.Assignment.Assignment
             return restResponse.GetModel<AssignmentCountResponse>();
         }
 
+        public async Task<ResponseMessage> GetAssignmentResponseByIdAsync(
+            string assignmentId, 
+            string accessToken)
+        {
+            var restResponse = await ExecuteGetAsync(
+                $"/task/{assignmentId}", accessToken);
+
+            return new ResponseMessage
+            {
+                Content = restResponse.Content,
+                StatusCode = restResponse.StatusCode.ToString()
+            };
+        }
+
         public async Task<AssignmentResponse> GetAssignmentByIdAsync(
             string assignmentId, 
             string accessToken)

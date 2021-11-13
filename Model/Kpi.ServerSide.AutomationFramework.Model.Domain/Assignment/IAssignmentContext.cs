@@ -11,6 +11,10 @@ namespace Kpi.ServerSide.AutomationFramework.Model.Domain.Assignment
             string assignmentId,
             string accessToken);
 
+        Task<ResponseMessage> GetAssignmentResponseByIdAsync(
+            string assignmentId,
+            string accessToken = null);
+
         Task<ResponseMessage> CreateAssignmentResponseAsync(
             AssignmentRequest assignmentRequest,
             string accessToken);
@@ -21,7 +25,7 @@ namespace Kpi.ServerSide.AutomationFramework.Model.Domain.Assignment
 
         Task<ResponseMessage> DeleteAssignmentResponseAsync(
             string assignmentId,
-            string accessToken);
+            string accessToken = null);
 
         Task<ResponseMessage> UpdateAssignmentResponseAsync(
             AssignmentRequest assignmentRequest,

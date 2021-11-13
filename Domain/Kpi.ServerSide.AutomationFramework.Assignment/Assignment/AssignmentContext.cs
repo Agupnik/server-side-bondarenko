@@ -27,6 +27,13 @@ namespace Kpi.ServerSide.AutomationFramework.Assignment.Assignment
             return await _taskApiClient.GetAssignmentByIdAsync(assignmentId, Token.BearerTokenGenerator(accessToken));
         }
 
+        public async Task<ResponseMessage> GetAssignmentResponseByIdAsync(
+            string assignmentId,
+            string accessToken = null)
+        {
+            return await _taskApiClient.GetAssignmentResponseByIdAsync(assignmentId, Token.BearerTokenGenerator(accessToken));
+        }
+
         public async Task<ResponseMessage> CreateAssignmentResponseAsync(
             AssignmentRequest assignmentRequest, 
             string accessToken)
@@ -43,7 +50,7 @@ namespace Kpi.ServerSide.AutomationFramework.Assignment.Assignment
 
         public async Task<ResponseMessage> DeleteAssignmentResponseAsync(
             string assignmentId, 
-            string accessToken)
+            string accessToken = null)
         {
             return await _taskApiClient.DeleteAssignmentResponseAsync(assignmentId, Token.BearerTokenGenerator(accessToken));
         }

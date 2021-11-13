@@ -9,7 +9,8 @@ using TechTalk.SpecFlow;
 
 namespace Kpi.ServerSide.AutomationFramework.Tests.Features
 {
-    [Binding, Scope(Feature = "Delete Assignment by Id")]
+    [Binding] 
+    [Scope(Feature = "Delete Assignment by Id")]
     public class DeleteAssignmentDefinition
     {
         private readonly AssignmentRequest _newAssignment;
@@ -50,6 +51,14 @@ namespace Kpi.ServerSide.AutomationFramework.Tests.Features
                 await _assignmentContext.DeleteAssignmentResponseAsync(
                     _createdAssignment.Data.Id, 
                     _userToken);
+        }
+
+        [When(@"I send delete request with created Assignment id as unauthorized user")]
+        public async Task WhenISendDeleteRequestWithCreatedAssignmentIdAsUnauthorizedUser()
+        {
+            _responseMessage =
+                await _assignmentContext.DeleteAssignmentResponseAsync(
+                    _createdAssignment.Data.Id);
         }
 
         [Then(@"I see (.*) status code")]

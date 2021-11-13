@@ -10,7 +10,8 @@ using TechTalk.SpecFlow;
 
 namespace Kpi.ServerSide.AutomationFramework.Tests.Features
 {
-    [Binding, Scope(Feature = "Update Assignment by Id")]
+    [Binding]
+    [Scope(Feature = "Update Assignment by Id")]
     public class PutAssignmentDefinition
     {
         private readonly IAssignmentContext _assignmentContext;

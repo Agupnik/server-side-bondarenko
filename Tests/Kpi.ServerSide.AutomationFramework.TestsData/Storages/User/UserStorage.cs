@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using Bogus;
 using Kpi.ServerSide.AutomationFramework.Model.Domain.User;
+using Kpi.ServerSide.AutomationFramework.TestsData.Generators;
 
 namespace Kpi.ServerSide.AutomationFramework.TestsData.Storages.User
 {
